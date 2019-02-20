@@ -11,56 +11,56 @@ namespace MusicLibraryAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class ImagesController : ControllerBase
+    public class LyricsController : ControllerBase
     {
         private readonly musiclibraryContext _context;
 
-        public ImagesController(musiclibraryContext context)
+        public LyricsController(musiclibraryContext context)
         {
             _context = context;
         }
 
-        // GET: api/Images
+        // GET: api/Lyrics
         [HttpGet]
-        public IEnumerable<Image> GetImage()
+        public IEnumerable<Lyric> GetLyric()
         {
-            return _context.Image;
+            return _context.Lyric;
         }
 
-        // GET: api/Images/5
+        // GET: api/Lyrics/5
         [HttpGet("{id}")]
-        public async Task<IActionResult> GetImage([FromRoute] int id)
+        public async Task<IActionResult> GetLyric([FromRoute] int id)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            var image = await _context.Image.FindAsync(id);
+            var lyric = await _context.Lyric.FindAsync(id);
 
-            if (image == null)
+            if (lyric == null)
             {
                 return NotFound();
             }
 
-            return File(image.Data, "image/png");
+            return Ok(lyric);
         }
 
-        // PUT: api/Images/5
+        // PUT: api/Lyrics/5
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutImage([FromRoute] int id, [FromBody] Image image)
+        public async Task<IActionResult> PutLyric([FromRoute] int id, [FromBody] Lyric lyric)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            if (id != image.ImageId)
+            if (id != lyric.LyricId)
             {
                 return BadRequest();
             }
 
-            _context.Entry(image).State = EntityState.Modified;
+            _context.Entry(lyric).State = EntityState.Modified;
 
             try
             {
@@ -68,7 +68,7 @@ namespace MusicLibraryAPI.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!ImageExists(id))
+                if (!LyricExists(id))
                 {
                     return NotFound();
                 }
@@ -81,45 +81,45 @@ namespace MusicLibraryAPI.Controllers
             return NoContent();
         }
 
-        // POST: api/Images
+        // POST: api/Lyrics
         [HttpPost]
-        public async Task<IActionResult> PostImage([FromBody] Image image)
+        public async Task<IActionResult> PostLyric([FromBody] Lyric lyric)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            _context.Image.Add(image);
+            _context.Lyric.Add(lyric);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetImage", new { id = image.ImageId }, image);
+            return CreatedAtAction("GetLyric", new { id = lyric.LyricId }, lyric);
         }
 
-        // DELETE: api/Images/5
+        // DELETE: api/Lyrics/5
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteImage([FromRoute] int id)
+        public async Task<IActionResult> DeleteLyric([FromRoute] int id)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            var image = await _context.Image.FindAsync(id);
-            if (image == null)
+            var lyric = await _context.Lyric.FindAsync(id);
+            if (lyric == null)
             {
                 return NotFound();
             }
 
-            _context.Image.Remove(image);
+            _context.Lyric.Remove(lyric);
             await _context.SaveChangesAsync();
 
-            return Ok(image);
+            return Ok(lyric);
         }
 
-        private bool ImageExists(int id)
+        private bool LyricExists(int id)
         {
-            return _context.Image.Any(e => e.ImageId == id);
+            return _context.Lyric.Any(e => e.LyricId == id);
         }
     }
 }

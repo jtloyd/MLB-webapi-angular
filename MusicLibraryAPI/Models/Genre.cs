@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace MusicLibraryAPI
+namespace MusicLibraryAPI.Models
 {
     public partial class Genre
     {

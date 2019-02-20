@@ -1,0 +1,14 @@
+C:\Users\swbge\Dropbox\cs\source\repos\MLB-webapi-angular\MusicLibraryAPI\bin\Release\netcoreapp2.1\MusicLibraryAPI.deps.json
+C:\Users\swbge\Dropbox\cs\source\repos\MLB-webapi-angular\MusicLibraryAPI\bin\Release\netcoreapp2.1\MusicLibraryAPI.runtimeconfig.json
+C:\Users\swbge\Dropbox\cs\source\repos\MLB-webapi-angular\MusicLibraryAPI\bin\Release\netcoreapp2.1\MusicLibraryAPI.runtimeconfig.dev.json
+C:\Users\swbge\Dropbox\cs\source\repos\MLB-webapi-angular\MusicLibraryAPI\bin\Release\netcoreapp2.1\MusicLibraryAPI.dll
+C:\Users\swbge\Dropbox\cs\source\repos\MLB-webapi-angular\MusicLibraryAPI\bin\Release\netcoreapp2.1\MusicLibraryAPI.pdb
+C:\Users\swbge\Dropbox\cs\source\repos\MLB-webapi-angular\MusicLibraryAPI\obj\Release\netcoreapp2.1\MusicLibraryAPI.csprojAssemblyReference.cache
+C:\Users\swbge\Dropbox\cs\source\repos\MLB-webapi-angular\MusicLibraryAPI\obj\Release\netcoreapp2.1\MusicLibraryAPI.csproj.CoreCompileInputs.cache
+C:\Users\swbge\Dropbox\cs\source\repos\MLB-webapi-angular\MusicLibraryAPI\obj\Release\netcoreapp2.1\MusicLibraryAPI.RazorAssemblyInfo.cache
+C:\Users\swbge\Dropbox\cs\source\repos\MLB-webapi-angular\MusicLibraryAPI\obj\Release\netcoreapp2.1\MusicLibraryAPI.RazorAssemblyInfo.cs
+C:\Users\swbge\Dropbox\cs\source\repos\MLB-webapi-angular\MusicLibraryAPI\obj\Release\netcoreapp2.1\MusicLibraryAPI.AssemblyInfoInputs.cache
+C:\Users\swbge\Dropbox\cs\source\repos\MLB-webapi-angular\MusicLibraryAPI\obj\Release\netcoreapp2.1\MusicLibraryAPI.AssemblyInfo.cs
+C:\Users\swbge\Dropbox\cs\source\repos\MLB-webapi-angular\MusicLibraryAPI\obj\Release\netcoreapp2.1\MusicLibraryAPI.RazorTargetAssemblyInfo.cache
+C:\Users\swbge\Dropbox\cs\source\repos\MLB-webapi-angular\MusicLibraryAPI\obj\Release\netcoreapp2.1\MusicLibraryAPI.dll
+C:\Users\swbge\Dropbox\cs\source\repos\MLB-webapi-angular\MusicLibraryAPI\obj\Release\netcoreapp2.1\MusicLibraryAPI.pdb

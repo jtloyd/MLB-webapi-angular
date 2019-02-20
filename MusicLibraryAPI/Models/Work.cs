@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace MusicLibraryAPI
+namespace MusicLibraryAPI.Models
 {
     public partial class Work
     {
@@ -14,6 +14,7 @@ namespace MusicLibraryAPI
         public int ArtistId { get; set; }
         public string WorkName { get; set; }
         public int? ImageId { get; set; }
+        public int? LyricId { get; set; }
 
         public Artist Artist { get; set; }
         public ICollection<WorkVersion> WorkVersion { get; set; }

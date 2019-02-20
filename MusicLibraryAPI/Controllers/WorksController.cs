@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using MusicLibraryAPI;
+using MusicLibraryAPI.Models;
 
 namespace MusicLibraryAPI.Controllers
 {
@@ -22,9 +22,14 @@ namespace MusicLibraryAPI.Controllers
 
         // GET: api/Works
         [HttpGet]
-        public IEnumerable<Work> GetWork()
+        public IEnumerable<Work> GetWork(int? artistid)
         {
-            return _context.Work;
+            var works = from w in _context.Work select w;
+            if (artistid != null)
+            {
+                works = works.Where(w => w.ArtistId == artistid);
+            }
+            return works;
         }
 
         // GET: api/Works/5

@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 
-namespace MusicLibraryAPI
+namespace MusicLibraryAPI.Models
 {
     public partial class musiclibraryContext : DbContext
     {
@@ -18,6 +18,7 @@ namespace MusicLibraryAPI
         public virtual DbSet<Artist> Artist { get; set; }
         public virtual DbSet<Genre> Genre { get; set; }
         public virtual DbSet<Image> Image { get; set; }
+        public virtual DbSet<Lyric> Lyric { get; set; }
         public virtual DbSet<Work> Work { get; set; }
         public virtual DbSet<WorkVersion> WorkVersion { get; set; }
 
@@ -84,6 +85,20 @@ namespace MusicLibraryAPI
                     .HasColumnName("data");
             });
 
+            modelBuilder.Entity<Lyric>(entity =>
+            {
+                entity.ToTable("lyric");
+
+                entity.Property(e => e.LyricId)
+                    .HasColumnName("lyric_id")
+                    .UseNpgsqlIdentityAlwaysColumn();
+
+                entity.Property(e => e.Data)
+                    .IsRequired()
+                    .HasColumnName("data")
+                    .HasColumnType("character varying");
+            });
+
             modelBuilder.Entity<Work>(entity =>
             {
                 entity.ToTable("work");
@@ -96,6 +111,10 @@ namespace MusicLibraryAPI
 
                 entity.Property(e => e.ImageId)
                     .HasColumnName("image_id")
+                    .HasDefaultValueSql("'-1'::integer");
+
+                entity.Property(e => e.LyricId)
+                    .HasColumnName("lyric_id")
                     .HasDefaultValueSql("'-1'::integer");
 
                 entity.Property(e => e.WorkName)
